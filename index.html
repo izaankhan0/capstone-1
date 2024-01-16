@@ -1,136 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Selector</title>
-<style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-*{
-margin: 0;
-padding: 0;
-overflow: hidden;
-}
-.container{
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            flex-direction: column;
+        }
 
-height: 100vh;
+        .box {
+            background-color: gold;
+            height: 300px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: 200ms linear;
+        }
 
-width: 100%;
+        .true {
+            background-color: green;
+            transform: scale(1.05);
+        }
 
-display: flex;
+        .false {
+            transition: 100ms linear;
+            background-color: rgb(245, 17, 17);
+            transform: scale(1.1);
+        }
 
-justify-content: center;
+        h1 {
+            font-size: 40px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 800;
+        }
 
-align-items: center;
-
-background-color: black;
-flex-direction: column;
-
-}
-.box{
-
-background-color: gold;
-
-
-height: 300px;
-
-width: 300px;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-border-radius: 50%;
-
-transition: 200ms linear;
-}
-.true{
-background-color:green;
-
-transform: scale(1.05);
-
-/* transition: 100ms linear; */
-
-background-color: rgb(245, 17, 17);
-
-transform: scale(1.1);
-}
-
-
-
-.false{
-
-transition: 100ms linear; "/
-
-background-color: rgb(245, 17, 17);
-
-transform: scale(1.1);
-}
-h1{
-font-size: 40px;
-
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-font-weight: 800;
-}
-
-button{
-
-margin-top: 70px;
-
-font-size: 17px;
-
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande", "Lucida Sans', Arial, sans-serif;
-
-font-weight: 800;
-
-width: 100px;
-
-height: 40px;
-
-background-color:gold;
-
-border-radius: 10px;
-
-border: solid 2px rgb(255, 255, 255);
-
-cursor: pointer;
-
-}
-
-</style>
+        button {
+            margin-top: 70px;
+            font-size: 17px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande", "Lucida Sans', Arial, sans-serif;
+            font-weight: 800;
+            width: 100px;
+            height: 40px;
+            background-color: gold;
+            border-radius: 10px;
+            border: solid 2px rgb(255, 255, 255);
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="box">
-<h1>Press</h1>
-</div>
-</div>
-<button onclick="clicker()">Randomize</button>
+    <div class="container">
+        <div class="box">
+            <h1>Press</h1>
+        </div>
+    </div>
+    <button onclick="clicker()">Randomize</button>
 
-<script>
+    <script>
+        function clicker() {
+            let percentage = Math.random() * 100;
 
+            console.log(percentage);
 
-function clicker(){
-Let percentage = Math.random() *100
+            document.querySelector('.box').classList.remove('true');
+            document.querySelector('.box').classList.remove('false');
 
-console.log(percentage)
-
-document.querySelector('.box').classList.remove('true')
-
-document.querySelector('.box').classList.remove('false')
-
-if (percentage > 50){
-document.querySelector('.box').innerHTML = '<h1>Tell Truth </h1>' document.querySelector('.box').classList.add('true')
-} else
-
-document.querySelector('.box').innerHTML = '<h1>Lie </h1>' document.querySelector('.box').classList.add('false')
-}
-
-
-</script>
+            if (percentage > 50) {
+                document.querySelector('.box').innerHTML = '<h1>Tell Truth </h1>';
+                document.querySelector('.box').classList.add('true');
+            } else {
+                document.querySelector('.box').innerHTML = '<h1>Lie </h1>';
+                document.querySelector('.box').classList.add('false');
+            }
+        }
+    </script>
 </body>
 </html>
