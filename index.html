@@ -1,26 +1,137 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>My Resume</title>
-    </head>
-    <body>
-        <img src="./izaan.jpeg" alt="Profile Pic" height="150">
-        <h1>Izaan Khan</h1>
-        <hr>
-        <h3>About Me</h3>
-        <p>My name is Izaan Khan and im an enthusiastic 17 year old looking for positive changes in life</p>
-        <hr>
-        <h3>Education</h3>
-        <p>I am currently in Second Year in college in Karachi Grammer School. I did my O Levels from Habib Public School.</p>
-        <hr>
-        <h3>Extra Curricular Activites</h3>
-        <p>I am into MUNs and have done 9 and have 8 MUN awards. I aspire to do many more in the future. I also participated in 2 Science competitions and won 2 awards in one of them. I am always looking towards oppertunities to proove myself </p>
-        <hr>
-        <h3>Skills</h3>
-        <p>I understand and can speak 3 languages namely English, Urdu and Turkish. I am a skilled graphic designer and design social media posts on canva. I am also skilled in HTML and CSS. I can do accounting and am familiar with how its done and its principles. I am also skilled in designing presentations and presenting them as well.</p>
-        <hr>
-        <a href="./contact.html"><h3>Contact Me</h3></a>
-        <hr>
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selector</title>
+<style>
+
+*{
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+container{
+
+height: 100vh;
+
+width: 100%;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+background-color: black;
+flex-direction: column;
+
+}
+.box{
+
+background-color: gold;
+
+
+height: 300px;
+
+width: 300px;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+border-radius: 50%;
+
+transition: 200ms linear;
+}
+.true{
+background-color:green;
+
+transform: scale(1.05);
+
+/* transition: 100ms linear; */
+
+background-color: rgb(245, 17, 17);
+
+transform: scale(1.1);
+}
+
+
+
+.false{
+
+transition: 100ms linear; "/
+
+background-color: rgb(245, 17, 17);
+
+transform: scale(1.1);
+}
+h1{
+font-size: 40px;
+
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+font-weight: 800;
+}
+
+button{
+
+margin-top: 70px;
+
+font-size: 17px;
+
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande", "Lucida Sans', Arial, sans-serif;
+
+font-weight: 800;
+
+width: 100px;
+
+height: 40px;
+
+background-color:gold;
+
+border-radius: 10px;
+
+border: solid 2px rgb(255, 255, 255);
+
+cursor: pointer;
+
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="box">
+<h1>Pressk/h1>
+</div>
+</div>
+<button onclick="clicker()">Randomize</button>
+<script src="./script.js"></script>
+</body>
+<script>
+
+
+function clicker(){
+Let percentage = Math.random() *100
+
+console.log(percentage)
+
+document.querySelector('.box').classList.remove('true')
+
+document.querySelector('.box').classList.remove('false')
+
+if (percentage > 50){
+document.querySelector('.box').innerHTML = '<h1>Tell Truth </h1>' document.querySelector('.box').classList.add('true')
+} else
+
+document.querySelector('.box').innerHTML = '<h1>Lie /h1>' document.querySelector('.box').classList.add('false')
+}
+
+
+</script>
 </html>
